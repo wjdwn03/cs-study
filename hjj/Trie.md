@@ -9,7 +9,7 @@
 - 트라이는 re**trie**val tree에서 나온 단어
 - **배열**과 **map**을 이용하여 구현할 수 있음.
 
-![Untitled](./img/Trie_basic.png)
+<img src="./img/Trie_basic.png" width="400">
 
 ## Trie 노드 구성
 
@@ -18,11 +18,13 @@
     - **value** : key에 해당하는 자식 노드
 - **`isLastChar`** : 마지막 문자 여부
 
-![Untitled](./img/Trie_node.png)
+
+<img src="./img/Trie_node.png" width="400">
+
 
 <br/><br/>
 
-![Untitled](./img/Trie_isLastChar1.png)
+<img src="./img/Trie_isLastChar1.png" width="400">
 
 - 위 그림에서 보이는 것처럼 등록한 단어의 마지막 문자에 isLastChar를 true로 설정해줌.
 - 루트 노드는 빈 문자가 들어있다. (특정 문자가 할당되어 있지 않음)
@@ -31,7 +33,7 @@
 
 <br/><br/>
 
-![Untitled](./img/Trie_isLastChar2.png)
+<img src="./img/Trie_isLastChar2.png" width="400">
 
 ✔️ 만약 위 그림처럼 pop이 등록되어 있지 않은 경우
 
