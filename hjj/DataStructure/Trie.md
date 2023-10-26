@@ -70,6 +70,7 @@
 
 <br/>
 
+### 특징
 |  | |
 | --- | --- | 
 | 데이터들의 input 순서 보장 여부 | no |
@@ -80,19 +81,18 @@
 
 ### ⏰ 시간 복잡도
 
-| funtion | 시간 복잡도 |
+| 연산 | 시간 복잡도 |
 |--|--|
-| 데이터 추가 | O(N) |
-| 데이터 검색 | O(N) |
-| 데이터 삭제 | O(N) |
+| 삽입 | O(N) |
+| 검색 | O(N) |
+| 삭제 | O(N) |
 
 
 <br/>
-<br/>
 
-- map을 이용한 구현
+### 구현
 
-[java를 이용한 Trie 구현 코드](./algorithm/TrieMap.java)
+[map을 이용한 Trie](./algorithm/TrieMap.java)
 
 <br/>
 <br/>
