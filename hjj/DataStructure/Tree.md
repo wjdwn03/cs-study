@@ -1,8 +1,9 @@
 # Tree
 ### ❓노드들이 나뭇가지처럼 연결된 계층적 자료구조
 
-- 원소들 간에 계층관계를 가지는 비선형 자료구조
+- 원소들 간에 계층관계를 가지는 <u>비선형 자료구조</u>
 - 원소들 간에 1:n 관계를 가지는 자료구조
+- `노드`와 `간선`으로 이루어져 있음.
 - 상위 원소에서 하위 원소로 내려가면서 확장되는 트리 모양의 구조
 - 루프를 갖지 않고 연결된 무방향 그래프 구조
 - 노드가 n개인 트리는 항상 n-1개의 간선을 보유
@@ -35,145 +36,39 @@
 </br>
 
 ### Tree 유형의 자료구조
-- 이진 트리(Binary Tree)
+- [이진 트리(Binary Tree)](./BinaryTree.md)
     - 완전 이진 트리(Complete Binary Tree)
     - 포화 이진 트리(Perfect Binary Tree)
     - 편향 이진 트리(Skewed Binary Tree)
-- Binary Search Tree(BST, 이진 탐색 트리)
+- [Binary Search Tree(BST, 이진 탐색 트리)](./BinarySearchTree.md)
+- 자가 균형 이진 탐색 트리(Self-Balancing Binary Search Tree) : 삽입, 삭제 시 균형이 맞도록 재조정을 하는 트리
+    - [AVL 트리](./AVL_Tree.md)
+    - [Red-Black Tree](./RedBlackTree.md)
+    - [B Tree](./B-Tree.md)
+- [Trie](./Trie.md)
 - Ternary Tree : 자식 노드가 최대 3개까지 존재하는 트리
-- Red-Black Tree
-- B Tree
-- Trie
 
 </br>
-
-## Binary Tree(이진 트리)
-❓**자식 노드**를 <u>**최대 2개**</u> 갖는 트리
-- 모든 노드의 <u>차수가 2이하</u>임.
-
-![binary tree example](./img/BinaryTree_example.png) 
-*이진 트리 예시*
-
-| | |
-| --- | --- |
-| ![bianry min](./img/BinaryTree_min_node.png) | ![binary max](./img/BinaryTree_max_node.png)|
-- 높이 i(레벨 i)에서 노드의 최대 개수 **2<sup>i** 개
-- 높이가 h인 이진 트리가 가질 수 있는 노드의 </br> 최소 개수 :  **h+1** 개, 최대 개수 : **2<sup>(h+1)</sup>-1** 개 
-
-### 이진 트리 종류
-
-<img src="./img/BinaryTree_type.png">
-
-- **`포화 이진 트리(Perfect Binary Tree)`**
-    - 모든 레벨에 노드가 포화 상태로 차 있는 이진 트리(모든 단말 노드에서의 높이가 동일)
-    - 높이가 h일 때, 이진트리가 가질 수 있는 최대 노드의 개수를 가진 이진 트리
-        - 높이가 3일 때, **2<sup>(3+1)</sup>-1=15** 개의 노드
-    - 루트를 1번으로 하여 2<sup>h+1</sup>-1까지 정해진 위치에 대한 노드 번호를 가짐
-- **`완전 이진 트리(Complete Binary Tree)`**
-    - 높이가 h이고 노드 수가 n개 일 때, 노드 번호 1번부터 n번까지 빈 자리가 없는 이진 트리
-    - 트리의 높이를 결정하는 마지막 레벨의 단말노드를 제외한 그 위 레벨은 전부 꽉 차(포화 이진 트리) 있어야 함.
-    - 모든 포화 이진 트리는 완전 이진 트리임.
-- **`편향 이진 트리(Skewed Binary Tree)`**
-    - 높이 h에 대한 최소 개수의 노드를 가지면서 한쪽 방향의 자식 노드만을 가진 이진 트리
-        - 왼쪽 편향 이진 트리, 오른쪽 편향 이진 트리가 있음.
-
-### Tree의 순회 방법
-1. 중위순회(Inorder) : **왼쪽자식 -> 부모 -> 오른쪽 자식** 순서로 방문
-2. 전위순회(Preorder) : **부모 -> 왼쪽자식, 오른쪽 자식** 순서로 방문
-3. 후위순회(Postorder) : **왼쪽자식 -> 오른쪽 자식 -> 부모** 순서로 방문
-
-### 배열을 이용한 이진 트리 표현
-
-<img src="./img/BinaryTree_by_Array.png" width="650">
-
-- 노드 번호를 배열의 인덱스로 사용
-- 높이가 h인 이진 트리를 위한 배열의 크기
-    - 0번 인덱스를 사용하지 않기 때문에 **2<sup>h+1**
-
-- 노드 번호의 성질
-    - 노드 번호가 i 인 노드의 <u>부모</u> 노드 번호 : **i/2**
-    - 노드 번호가 i 인 노드의 <u>왼쪽 자식</u> 노드 번호 : **2 * i**
-    - 노드 번호가 i 인 노드의 <u>오른쪽 자식</u> 노드 번호 : **2 * i + 1**
-    - 레벨 n의 노드 번호 시작 번호 : **2<sup>n**
-- 편향 이진 트리와 같은 형태일 경우 배열로 구현 시 필요한 크기보다 큰 공간을 차지할 수 있어 저장공간을 효율적으로 사용하지 못함. -> 이런 경우 LinkedList로 해결
-
-
-</br>
-
-## Binary Search Tree(BST, 이진 탐색 트리)
-❓이진 트리 기반의 탐색을 위한 자료구조, 이진 탐색과 연결 리스트를 결합한 자료 구조
-
-<p align="center"><img src="./img/BinarySearchTree_basic.png" width="400"></p>
-
-- 항상 왼쪽 자식 노드의 키값은 부모노드보다 작고, 오른쪽 자식 노드의 키값은 부모노드보다 큼.
-- 각 노드에 중복되지 않는 키가 존재.
-- 트리의 높이에 영향을 받기 때문에 높이가 h일 때 시간 복잡도 : O(h)
-- 트리의 균형이 한쪽으로 치우쳐진 경우(최악의 경우) 시간 복잡도 : O(N)
-    - 이 경우를 막기 위해 나온 기법이 Red-Black Tree(RBT)
 
 ### 장점
-- 이진 탐색의 효율적인 탐색 능력을 유지하면서, 빈번한 자료 삽입, 삭제가 가능
+- 빠른 탐색 속도 : 이진 탐색 트리의 경우 데이터를 정렬된 상태로 유지하므로 탐색, 삽입, 삭제 연산에 대해 평균적으로 O(log N)의 시간 복잡도를 가짐.
+- 자기 참조적 구조 : 트리는 자기 참조적인 구조를 가지고 있어 특정 노드에서 서브트리 전체를 나타내거나 탐색할 수 있음. 이를 활용하여 효율적인 재귀 알고리즘 구현 가능
+- 정렬된 상태를 유지하므로 효율적인 검색이 가능
 
-### BST 탐색
-
-- 찾고자 하는 값을 num이라고 하자.
-
-```text
-1. 루트 노드의 키와 num을 비교하고, 찾는 값이면 탐색 종료
- 1-1. if( num < 루트 노드의 키 )
-        왼쪽 서브 트리 탐색
- 1-2. if( num > 루트 노드의 키 ) 
-        오른쪽 서브 트리 탐색
-```
-위 과정을 num을 찾을 때까지 반복.
-
-### BST 삽입
-
-<img src="./img/BinarySearchTree_Insert.png" width="400">
-
-```text
-1. 루트 노드와 비교하여 같으면 오류 발생(중복 값 허용 X)
- 1-1. if(삽입할 노드 < 루트 노드의 키)
-        왼쪽 서브 트리를 탐색하여 비어있으면 추가 후 삽입 과정 종료, 비어있지 않으면 값 비교
- 1-2. if(삽입할 노드 > 루트 노드의 키)
-        오른쪽 서브 트리를 탐색하여 비어있으면 추가 후 삽입 과정 종료, 비어있지 않으면 값 비교
-```
-
-위 과정을 빈 공간이 나올 때까지 반복한다.
-
-
-### BST 삭제
-
-- 3가지 경우가 존재
-
-1. 삭제하려는 노드가 단말 노드인 경우
-2. 삭제하려는 노드의 서브 트리가 하나인 경우
-3. 삭제하려는 노드의 서브 트리가 두 개인 경우
-
-#### 1. 단말 노드인 경우
-- 삭제할 노드의 부모 노드가 있다면 부모 노드의 자식 노드를 NULL로 만들고 삭제하면 됨.
-
-<p align="center"><img src="./img/BinarySearchTree_Delete_leafNode.png" width="400"></p>
-
-#### 2. 서브 트리가 하나인 경우
-
-- 삭제할 노드의 자식 노드를 부모 노드가 가리키게 하고 삭제하면 됨.
-
-<p align="center"><img src="./img/BinarySearchTree_Delete_one_subtree.png" width="500"></p>
-
-#### 3. 서브 트리가 두 개인 경우
-
-- 3-1 삭제할 노드의 <u>왼쪽 서브 트리의 가장 큰 자손</u>을 삭제할 노드의 자리로 올림.
-- 3-2 삭제할 노드의 <u>오른쪽 서브 트리의 가장 작은 자손</u>을 삭제할 노드의 자리로 올림.
-
-<p align="cencter"><img src="./img/BinarySearchTree_Delete_two_subtree.png" width="500"></p>
-
-
-
-</br>
+### 단점
+- 삽입 및 삭제의 복잡성
+    - 트리의 구조를 유지하기 위해 삽입 및 삭제 연산이 복잡할 수 있음.
+    - 특히, 불균형한 트리의 경우 트리의 재조정이 필요할 수 있어 추가적인 연산이 필요
+- 메모리 사용
+    - 포인터로 연결된 노드 구조를 가지고 있기 때문에 메모리 사용이 비교적 큼.
+    - 트리의 균형을 유지하기 위해 추가적인 포인터를 사용하는 경우 메모리 사용이 더욱 증가할 수 있음.
+- 순회 순서의 의존성
+    - 순회 순서는 트리의 구성에 따라 달라짐.
+    - 따라서 트리에 저장된 데이터를 순차적으로 접근해야 하는 경우 순회 순서에 따라 접근해야 하므로 일반적인 순차 자료구조보다는 조금 복잡할 수 있음.
 
 - 참고
 
 [tree](https://www.javatpoint.com/tree)   
 [What is Tree Data Structure?](https://www.geeksforgeeks.org/tree-data-structure/)   
-[이진트리 Binary Tree의 세 가지 종류와 특징](https://velog.io/@vermonter/Data-Structure-%EC%9D%B4%EC%A7%84-%ED%8A%B8%EB%A6%ACBinary-Tree%EC%9D%98-%EC%84%B8-%EA%B0%80%EC%A7%80-%EC%A2%85%EB%A5%98%EC%99%80-%ED%8A%B9%EC%A7%95)
+[이진트리 Binary Tree의 세 가지 종류와 특징](https://velog.io/@vermonter/Data-Structure-%EC%9D%B4%EC%A7%84-%ED%8A%B8%EB%A6%ACBinary-Tree%EC%9D%98-%EC%84%B8-%EA%B0%80%EC%A7%80-%EC%A2%85%EB%A5%98%EC%99%80-%ED%8A%B9%EC%A7%95)   
+[트리(Tree) 자료구조 알아보기 & Java 예제 코드](https://hoehen-flug.tistory.com/34)
