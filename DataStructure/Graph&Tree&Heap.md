@@ -138,6 +138,8 @@
 
 ## 정의
 
+> 일렬의 연결된 노드를 계층적인 트리 구조<sub>Tree Structure</sub>
+
 ## 특징
 
 ## 크기 조정
@@ -150,67 +152,88 @@
 
 # :green_book: Heap <sub>힙</sub>
 
+# :closed_book: 힙 (Heap)
+
 ## 정의
 
-> 데이터를 순서<sub>Sequence</sub>와 상관없이 저장하며 데이터 중복<sub>
-> Data Redundancy</sub>을 허용하지 않는 자료구조
+> 최댓값<sub>Max Value</sub> 또는 최솟값<sub>Min Value</sub>을 빠르게 탐색하기 위해 고안된 완전 이진 트리<sub>Complete Binary Tree</sub> 기반의 자료구조
 
 ## 특징
 
-- 키<sub>Key</sub>로만 데이터를 저장(Key = Value)
-- 키는 중복을 허용하지 않는 고유 값<sub>Unique</sub>
-- 다음과 같은 기본 연산을 가짐
-  - 데이터를 삽입하는 `add(key)`
-  - 데이터를 탐색하는 `contaions(key)`
-  - 데이터를 삭제하는 `remove(key)`
-  - 공집합 여부를 확인하는 `isEmpty()`
-- 인덱스가 없어 일반적으로 반복자<sub>Iterator</sub>로만 요소를 순회할 수 있음
+- 우선순위큐<sub>Priority Queue</sub>라는 ADT를 구현하기 위한 자료구조 중 하나
+- 완전 이진 트리<sub>Complete Binary Tree</sub> 구조로 구현
+- 여러 개의 값 중에서 최대 값이나 최솟값을 빠르게 찾아낼 수 있는 특성을 가짐
+- 모든 노드는 부모와 자식 간의 일정한 관계를 유지함
+  - **최대 힙**<sub>Max Heap</sub>은 루트 노드가 가장 큰 값을 가지고 부모는 자식보다 큰 값을 가짐
+  - **최소 힙**<sub>Min Heap</sub>은 루트 노드가 가장 작은 값을 가지고 부모는 자식보다 작은 값을 가짐
+    ![img:최대 힙과 최소 힙](./img/heap_01.png)
 
-## 셋의 구현체 종류
+## 힙의 구현 방법
 
-### HashSet <sub>해시셋</sub>
+![img:배열로 트리 구현](./img/heap_02.png)
 
-- 해시테이블<sub>HashTable</sub>을 활용한 가장 보편적인 Set의 구현체
-- 삽입과 탐색과 같은 작업에 걸리는 평균 시간 복잡도는 `O(1)`
-- 데이터를 중복 저장할 수 없고, 순서를 보장하지 않음
-- `null`의 입력이 가능하나 중복되지 않음(공집합)
+### 배열을 이용한 구현
 
-### TreeSet <sub>트리셋</sub>
+- 힙을 1차원 배열로 표현
+- 각 노드의 부모와 자식 관계를 인덱스를 통해 유지
+- 구현을 쉽게하기 위해 일반적으로 루트 노드를 인덱스 1로 시작
+- 부모와 자식 관계를 유지하기 위해 적절한 계산식을 사용
+  - 왼쪽 자식의 인덱스 : $Index_{parent} \times 2$
+  - 오른쪽 자식의 인덱스 : $Index_{parent} \times 2 + 1$
+  - 부모의 인덱스 : $Index_{child} \div 2$
 
-- 이진탐색트리<sub>Binary Search Tree, BST</sub>를 사용해 데이터를 정렬된 순서대로 저장하는 구현체
-- 삽입과 탐색과 같은 작업에 걸리는 평균 시간 복잡도는 `O(log N)` (N = element 개수)
-- 포함된 데이터 값의 정렬을 통한 우선순위 탐색 등에 용이함
-- `null`의 입력이 가능하나 중복되지 않음
+### 이진 트리를 이용한 구현
 
-### LinkedHashSet <sub>링크드해시셋</sub>
+- 자신의 값, 각 자식 노드를 가리키는 레퍼런스 변수 2개로 노드를 구성
+- 힙을 이진 트리로 구현하고, 각 노드에는 값을 저장
+- 각 노드의 부모와 자식 관계를 트리 구조를 통해 유지
 
-- 이중연결리스트<sub>DoubleLinkedList</sub>를 사용해 데이터가 삽입된 순서대로 유지 및 관리하는 구현체
-- 데이터를 중복 저장할 수 없지만 입력한 순서대로 데이터를 정렬
-- `null`의 입력이 가능하나 중복되지 않음
+## 힙의 연산
+
+max heap 기준 설명하며, min heap은 정렬 순서의 차이만 있고 과정은 동일함
+
+### 힙정렬
+
+```
+Heapify(A, i) {
+   leftChild <- left(i)
+   rightChild <- right(i)
+   if (leftChild <= heapsize) and (A[leftChild] > A[i])
+      largest <- leftChild
+   else
+      largest <- i
+   if (rightChild <= heapsize) and (A[rightChild] > A[largest])
+      largest <- rightChild
+   if (largest != i) {
+      exchange A[i] <-> A[largest]
+      Heapify(A, largest)
+   }
+}
+```
+
+### 데이터 삽입
+
+![img:힙 데이터 삽입](./img/heap_03.png)
+
+### 데이터 삭제
+
+![img:힙 데이터 삭제](./img/heap_04.png)
 
 ## 복잡도
 
 | 연산 종류             | 평균<sub>Avg</sub> | 최악<sub>Worst</sub> |
 | --------------------- | ------------------ | -------------------- |
 | 공간<sub>Space</sub>  | `O(N)`             | `O(N)`               |
-| 탐색<sub>Search</sub> | `O(1)`             | `O(N)`               |
-| 삽입<sub>Insert</sub> | `O(1)`             | `O(N)`               |
-| 삭제<sub>Delete</sub> | `O(1)`             | `O(N)`               |
+| 탐색<sub>Search</sub> | `O(1)`             | `O(1)`               |
+| 삽입<sub>Insert</sub> | `O(log N)`         | `O(log N)`           |
+| 삭제<sub>Delete</sub> | `O(log N)`         | `O(log N)`           |
 
-- 해시테이블 기반으로 만들어지는 만큼 유사한 시간 복잡도를 가짐
-- 트리셋의 경우 BST 기반이므로 탐색/삽입/삭제시 시간 복잡도는 `O(log N)`
-
-## 장단점
-
-- 키<sub>Key</sub>로만 이루어진 구조라는 점을 빼고 해시테이블과 장단점을 공유함
+- `N`은 힙의 요소 수
+- 탐색의 시간복잡도는 최대/최소힙에서 최대/최소 값을 조회한다는 전제로 작성됨
+- 최대/최소힙에서 최소/최대 값 또는 임의의 값을 조회 할 시 시간 복잡도는 `O(N)`
 
 ## 활용
 
-- 특정 데이터의 중복을 허용하지 않을 때
-- 특정 데이터의 포함 여부만 중요할 때
-
-# 부록
-
-## JAVA Collection Framework의 상속 기본 구조
-
-![map&set](./img/map&set_01.png)
+- 우선순위 큐(Priority Queue) 구현
+- 힙 정렬(Heap Sort) 알고리즘
+- 다익스트라 알고리즘(Dijkstra's Algorithm) 등
