@@ -16,6 +16,7 @@
 
 2. ### :file_folder: 자료구조 심화
 
-   - [:page_facing_up: **Trie**](./Trie.md) <sub>트라이</sub>
+   - [:page_facing_up: **Binary Search Tree**](./BinarySearchTree) <sub>이진 탐색 트리</sub>
    - [:page_facing_up: **B-Tree**](./B-Tree.md) <sub>B 트리</sub>
    - [:page_facing_up: **Red-Black Tree**](./Red-BlackTree.md) <sub>레드-블랙 트리</sub>
+   - [:page_facing_up: **Trie**](./Trie.md) <sub>트라이</sub>
