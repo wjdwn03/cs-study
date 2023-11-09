@@ -11,7 +11,7 @@
 	헤시함수에서는 결과값을 알아도 헤시함수의 식을 역산할 수 없다. (역산 가능하다면 이는 헤시함수가 역할을 다 하지 못한 것)
 	- Function 종류 
 	- Division method : 나눗셈을 활용해 입력값을 테이블의 크기로 나눠 계산한다.( idx = input % table_size) ~ size를 소수로정하고 2의 제곱수와 먼 값을 사용하는걸 추천
-	![divM](./img/divmethod.png)
+	![div](./img/divmethod.png)
 	위의 그림에서 테이블의 크기가 13인 경우 입력값에 대해서 25%13=12 이므로 12번 인덱스에 25가 저장되는 것을 알 수 있음.
 	h(x) = x mod m
 
@@ -19,7 +19,7 @@
 	- Multiplication method : 숫자로 된 key값 K 와 0~1사이의 실수 A 보통 2의 제곱수인 m을 사용해 다음과 같은 계산을 한다 H(k) = (k*AMod1)*m 
 	div method 방법은 해쉬 테이블 크기보다 큰 수를 해쉬 테이블 크기 범위에 들어오도록 수축시킨다. 
 	multiplication method방법은 이와 반대로 먼저 입력값을 0과 1 사이의 소수로 대응시킨 다음 해시 테이블 크기 m을 곱하여 0~m-1 사이로 팽창시킨다. 이 방법에서는 해쉬 함수의 특성을 결정짓는 0<A<1 의 범위의 상수 A를 미리 준비해야 한다. 임의의 원소 x에 대해 다음과 같은 과정을 거쳐 x의 주소를 결정한다.
-	![divM](./img/multimethod.png)
+	![div2](./img/multimethod.png)
 	예를 들어, 크기 m이 65,536인 해시 테이블에서 A=0.6180339887로 정해져 있다고 하고(x=1,025,390) 해쉬값을 구하면,
 	xA = 1,025,390 x 0.6180339887 = 633,725.871673093이 된다. 이 값에서 소수부만 추출하면 0.871673093이 되고, 
 	이 값에 해쉬 테이블의 크기인 65,536을 곱하면 57,125.967... 이 된다. 
@@ -56,8 +56,7 @@
 	충돌이 발생하지 않는다고 한다(70~80% 포화시 충돌 가능성 높아짐)
 
 ## :memo: java의 헤시맵과 헤시 테이블의 차이점 
-	<pre>
-	<code>
+```
 // 해시테이블의 put
 public synchronized V put(K key, V value) {
     // Make sure the value is not null
@@ -85,8 +84,7 @@ public synchronized V put(K key, V value) {
 public V put(K key, V value) {
     return putVal(hash(key), key, value, false, true);
 }
-	</code>
-	</pre>
+```
 
 - 첫번째 put은 해시테이블의 put이며, 두번째 put은 해시맵의 put이다. 
 첫번째 해시테이블의 put에는 synchronized 키워드가 붙어있는 것을 확인할 수 있는데, 
