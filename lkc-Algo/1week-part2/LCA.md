@@ -15,12 +15,15 @@
    - DP
      2^h의 부모를 알면 연산의 횟수가 매우 줄어든다.
      dp[cur][h] = 2차원배열에 현재 노드의 2^h번째 부모노드를 저장한다.
+     
   1. 트리의 최대 높이 h를 구한다.// (Math.log(n)/Math.log(2))-> n= 2^h-1 -> log n = h log 2
-     ```
+```
      static int getTreeHeight() {
 	return(int)Math.ceil(Math.log(n)/Math.log(2)) +1;
 }
-     ```
+```
+
+
   3. dfs탐색을 통해 각 노드의 높이(depth)를 구한다.+ dp[node][0] = 첫번째 부모노드 (2^0=1)로 초기화
 ```
 static void init(int cur, int h, int pa) {
