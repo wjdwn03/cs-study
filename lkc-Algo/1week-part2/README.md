@@ -1,4 +1,4 @@
-﻿# :books: DataStructure <sub>알고리즘</sub>
+﻿# :books: Algorithm <sub>알고리즘</sub>
 
 ## :memo: 개요
 
