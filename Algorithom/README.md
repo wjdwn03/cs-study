@@ -16,4 +16,13 @@
 
 2. ### :file_folder: Session 02
 
+   - [:page_facing_up: **Hash Table**](./Note/HashTable.md) <sub>해시 테이블</sub>
+     - [:question: Interview](./Interview/HashTable.md) <sub>인터뷰</sub>
+   - [:page_facing_up: **Depth-First Search & Breadth-First Search**](./Note/DFS&BFS.md) <sub>DFS & BFS, 깊이 우선 탐색 & 거리 우선 탐색</sub>
+     - [:question: Interview](./Interview/DFS&BFS.md) <sub>인터뷰</sub>
+   - [:page_facing_up: **Longest Increasing Subsequence**](./Note/LIS.md) <sub>LIS, 최장 증가 부분 수열</sub>
+     - [:question: Interview](./Interview/LIS.md) <sub>인터뷰</sub>
+   - [:page_facing_up: **Lowest Common Ancestor**](./Note/LCA.md) <sub>LCA, 최소 공통 조상</sub>
+     - [:question: Interview](./Interview/LCA.md) <sub>인터뷰</sub>
+
 3. ### :file_folder: Session 03
