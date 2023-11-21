@@ -258,27 +258,42 @@ class InsertionSort {
 <img src="./img/QuickSortProcedure1.png" align="center" width="48%">  
 <img src="./img/QuickSortProcedure2.png" align="center" width="48%">
 </p>
-</br>
+
+-------
+
+
 <p align="center">  
 <img src="./img/QuickSortProcedure3.png" align="center" width="48%">  
 <img src="./img/QuickSortProcedure4.png" align="center" width="48%">
 </p>
-</br>
+
+-------
+
+
 <p align="center">  
 <img src="./img/QuickSortProcedure5.png" align="center" width="48%">  
 <img src="./img/QuickSortProcedure6.png" align="center" width="48%">
 </p>
-</br>
+
+-------
+
+
 <p align="center">  
 <img src="./img/QuickSortProcedure7.png" align="center" width="48%">  
 <img src="./img/QuickSortProcedure8.png" align="center" width="48%">
 </p>
-</br>
+
+-------
+
+
 <p align="center">  
 <img src="./img/QuickSortProcedure9.png" align="center" width="48%">  
 <img src="./img/QuickSortProcedure10.png" align="center" width="48%">
 </p>
-</br>
+
+-------
+
+
 <p align="center"> 
 <img src="./img/QuickSortResult.png" align="center" width="80%">
 </p>
@@ -393,52 +408,81 @@ public class QuickSort {
 <img src="./img/MergeSortProcedure1.png" align="center" width="48%">  
 <img src="./img/MergeSortProcedure2.png" align="center" width="48%">
 </p>
-</br>
+
+-------
+
+
 <p align="center">  
 <img src="./img/MergeSortProcedure3.png" align="center" width="48%">  
 <img src="./img/MergeSortProcedure4.png" align="center" width="48%">
 </p>
-</br>
+
+-------
+
+
 <p align="center">  
 <img src="./img/MergeSortProcedure5.png" align="center" width="48%">  
 <img src="./img/MergeSortProcedure6.png" align="center" width="48%">
 </p>
-</br>
+
+-------
+
+
 <p align="center">  
 <img src="./img/MergeSortProcedure7.png" align="center" width="48%">  
 <img src="./img/MergeSortProcedure8.png" align="center" width="48%">
 </p>
-</br>
+
+-------
+
+
 <p align="center">  
 <img src="./img/MergeSortProcedure9.png" align="center" width="48%">  
 <img src="./img/MergeSortProcedure10.png" align="center" width="48%">
 </p>
-</br>
+
+-------
+
+
 <p align="center">  
 <img src="./img/MergeSortProcedure11.png" align="center" width="48%">  
 <img src="./img/MergeSortProcedure12.png" align="center" width="48%">
 </p>
-</br>
+
+-------
+
+
 <p align="center">  
 <img src="./img/MergeSortProcedure13.png" align="center" width="48%">  
 <img src="./img/MergeSortProcedure14.png" align="center" width="48%">
 </p>
-</br>
+
+-------
+
+
 <p align="center">  
 <img src="./img/MergeSortProcedure15.png" align="center" width="48%">  
 <img src="./img/MergeSortProcedure16.png" align="center" width="48%">
 </p>
-</br>
+
+-------
+
 <p align="center">  
 <img src="./img/MergeSortProcedure17.png" align="center" width="48%">  
 <img src="./img/MergeSortProcedure18.png" align="center" width="48%">
 </p>
-</br>
+
+-------
+
+
 <p align="center">  
 <img src="./img/MergeSortProcedure19.png" align="center" width="48%">  
 <img src="./img/MergeSortProcedure20.png" align="center" width="48%">
 </p>
-</br>
+
+-------
+
+
 <p align="center"> 
 <img src="./img/MergeSortResult.png" align="center" width="80%">
 </p>
@@ -546,6 +590,9 @@ public class MergeSort {
 # 계수 정렬<sub> Count Sort</sub>
 
 
+
+</br>
+</br>
 
 - 참고
 
