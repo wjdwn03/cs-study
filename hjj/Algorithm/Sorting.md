@@ -14,13 +14,16 @@
    - [병합 정렬](#병합-정렬-merge-sort)
    - [힙 정렬](#힙-정렬-heap-sort)
    - [기수 정렬](#기수-정렬-radix-sort)
-   - [계수 정렬](#계수-정렬-count-sort)
+   - [계수 정렬](#계수-정렬-counting-sort)
 
 # ❓정의
 > 데이터의 집합을 특정한 기준에 따라 순서대로 나열하는 것.
 
 ```
-> 내부 정렬(Internal sort) : 정렬하고자 하는 모든 데이터가 메모리에 올라와 정렬이 수행되는 방식, 정렬 시 추가 공간이 필요하지 않으며 배열 자체가 수정됨.
+> 내부 정렬(Internal sort)
+ - 정렬하고자 하는 모든 데이터가 메모리에 올라와 정렬이 수행되는 방식
+ - 데이터 양이 적을 때 메인 메모리 내에서 정렬하는 방법
+ - 속도는 빠르나 정렬할 자료의 양이 많을 경우 부적합
 
 > 외부 정렬(External sort) : 정렬하고자 하는 데이터가 너무 크기 때문에 일부만 올려놓은 상태에서 정렬한 것을 다시 합하는 방식
 
@@ -585,11 +588,342 @@ public class MergeSort {
 
 
 # 기수 정렬<sub> Radix Sort</sub>
+- 자릿수를 기준으로 정렬하는 방식
+- 장점
+    - 비교 연산을 하지 않으며 안정성을 가지는 정렬
+    - 이론상 시간 복잡도가 $O(N log N)$ 을 넘을 수 없음.
+- 단점
+    - 부동 소수점 실수처럼 특수한 비교 연산이 필요한 데이터에는 적용할 수 없음(데이터 타입이 한정적)
+- k(원소 중 최댓값)가 작을 때는 counting sort(계수 정렬)를, k가 클 때는 quick sort를 사용하는 것이 좋음.
+    - counting sort는 과정 중에 사용하는 누적 count 배열의 길이가 k이기 때문에 k가 큰 경우엔 비효율적일 수도 있음.
+    - quick sort는 분할해서 정렬하기 때문에 k가 큰 경우 quick sort가 더 나을수도 있음.
+- 시간 복잡도 
+    - d : 자릿수
+    - 평균, 최선, 최악 모두 : $O(dN)$
+
+### 동작 원리
+1. 주어진 원소 중에서 최댓값의 자릿수까지를 기준으로 정렬
+
+    - 1의 자리부터 d번째 자리까지를 기준으로 정렬
+
+<p align="center">
+<img src="./img/RadixSortProcedure.png" width="80%">
+</p>
+
+</br>
+
+### Radix Sort 구현
+<details>
+<summary>java 코드</summary>
+<div markdown="1">
+
+```java
+import java.util.ArrayDeque;
+import java.util.Arrays;
+
+public class RadixSort {
+	
+	static ArrayDeque<Integer>[] buckets = new ArrayDeque[10];
+	
+	static void radixSort(int[] arr) {
+		int div = 10;
+		while(div < 100000) {
+			for(int i=0;i<arr.length;i++) 
+				buckets[(arr[i]/div)%10].offer(arr[i]);
+
+	
+			for(int i=0, bi=0;i<10;i++) {
+				while(buckets[bi].isEmpty())
+					bi++;
+				arr[i]=buckets[bi].poll();
+			}
+			div *= 10;
+		}	
+	}
+
+	public static void main(String[] args) {
+		for(int i=0;i<10;i++)
+			buckets[i] = new ArrayDeque<>();
+		
+		int[] arr = {48081, 97342, 90287, 90583, 53202, 65215, 78397, 48001, 972, 65315};
+		
+		System.out.print("정렬 전 arr : ");
+		System.out.println(Arrays.toString(arr));	
+		// [48081, 97342, 90287, 90583, 53202, 65215, 78397, 48001, 972, 65315]
+        
+		radixSort(arr);
+		
+		System.out.print("정렬 후 arr : ");
+		System.out.println(Arrays.toString(arr));	
+		// [972, 48001, 48081, 53202, 65215, 65315, 78397, 90287, 90583, 97342]
+	}
+}
+```
+
+</div>
+</details>
+
+</br>
+</br>
+
+# 계수 정렬<sub> Counting Sort</sub>
+- 이름 그대로 배열 내에 특정한 값이 몇 번 등장했는지에 따라 정렬을 수행
+    - 따라서 비교연산이 사용되지 않음.
+- 단점
+    - 최댓값(k)에 영향을 받는 알고리즘
+        - k가 작은 수면 $O(N)$ 이겠지만,
+        - k가 무한으로 커지면 $O(무한)$이 될 수 있음.
+        - 우리가 입력받은 배열의 값들이 (1, 100000) 이라고 한다면, 이 배열은 두 개의 값만을 가지고 있음에도 불구하고 카운팅 배열의 크기는 100000으로 설정되어야 함.
+- 시간 복잡도
+    - k : input 데이터 중 최댓값
+    - 평균, 최선, 최악 모두 $O(N+k)$
+- 공간 복잡도
+    - 모두 $O(N+K)$
 
 
-# 계수 정렬<sub> Count Sort</sub>
+### 동작 원리
+1. A, B, C 배열을 준비함.
+    - A : 입력 받은 배열
+    - B : 배열 A의 각 원소 값이 등장하는 횟수를 저장할 배열 
+        - B의 길이 : `k (배열 A의 원소 값 중 최댓값) + 1`
+    - C : 정렬된 값을 담을 배열
+1. A의 각 원소 값을 B의 인덱스로 사용해서 해당 위치의 값을 하나 증가 시킴 `B[A[i]]++`
+1. A의 모든 원소 값의 등장 횟수를 B에 반영했으면 B의 각 요소들을 누적합으로 갱신 `B[i] = B[i] + B[i-1]`
+1. A의 가장 뒤에 있는 값부터 아래 과정을 시작
+```
+for(int i=A.length; i>=0; i--)
+    - A[i]의 값을 B의 인덱스로 활용하여 값을 가져옴.
+    - B에서 가져온 값을 C의 인덱스로 활용하고 C의 인덱스 그 위치에 A[i] 값을 넣어줌.
+    - 사용된 B의 값을 하나 감소시킴
+
+```
 
 
+
+
+<details>
+<summary><b>동작 과정 이미지</b></summary>
+<div markdown="1">
+<p align="center">  
+<img src="./img/CountingSortProcedure1.png" align="center" width="48%">  
+<img src="./img/CountingSortProcedure2.png" align="center" width="48%">
+</p>
+
+-------
+
+
+<p align="center">  
+<img src="./img/CountingSortProcedure3.png" align="center" width="48%">  
+<img src="./img/CountingSortProcedure4.png" align="center" width="48%">
+</p>
+
+-------
+
+
+<p align="center">  
+<img src="./img/CountingSortProcedure5.png" align="center" width="48%">  
+<img src="./img/CountingSortProcedure6.png" align="center" width="48%">
+</p>
+
+-------
+
+
+<p align="center">  
+<img src="./img/CountingSortProcedure7.png" align="center" width="48%">  
+<img src="./img/CountingSortProcedure8.png" align="center" width="48%">
+</p>
+
+-------
+
+
+<p align="center">  
+<img src="./img/CountingSortProcedure9.png" align="center" width="48%">  
+<img src="./img/CountingSortProcedure10.png" align="center" width="48%">
+</p>
+
+-------
+
+
+<p align="center">  
+<img src="./img/CountingSortProcedure11.png" align="center" width="48%">  
+<img src="./img/CountingSortProcedure12.png" align="center" width="48%">
+</p>
+
+-------
+
+
+<p align="center">  
+<img src="./img/CountingSortProcedure13.png" align="center" width="80%">  
+</p>
+
+-------
+
+
+<p align="center">  
+<img src="./img/CountingSortProcedure14.png" align="center" width="48%">  
+<img src="./img/CountingSortProcedure15.png" align="center" width="48%">
+</p>
+
+-------
+
+<p align="center">  
+<img src="./img/CountingSortProcedure16.png" align="center" width="48%">  
+<img src="./img/CountingSortProcedure17.png" align="center" width="48%">
+</p>
+
+-------
+
+
+<p align="center">  
+<img src="./img/CountingSortProcedure18.png" align="center" width="48%">  
+<img src="./img/CountingSortProcedure19.png" align="center" width="48%">
+</p>
+
+-------
+
+<p align="center">  
+<img src="./img/CountingSortProcedure20.png" align="center" width="48%">  
+<img src="./img/CountingSortProcedure21.png" align="center" width="48%">
+</p>
+
+-------
+
+<p align="center">  
+<img src="./img/CountingSortProcedure22.png" align="center" width="48%">  
+<img src="./img/CountingSortProcedure23.png" align="center" width="48%">
+</p>
+
+-------
+
+<p align="center">  
+<img src="./img/CountingSortProcedure24.png" align="center" width="48%">  
+<img src="./img/CountingSortProcedure25.png" align="center" width="48%">
+</p>
+
+-------
+
+<p align="center">  
+<img src="./img/CountingSortProcedure26.png" align="center" width="48%">  
+<img src="./img/CountingSortProcedure27.png" align="center" width="48%">
+</p>
+
+-------
+
+<p align="center">  
+<img src="./img/CountingSortProcedure28.png" align="center" width="48%">  
+<img src="./img/CountingSortProcedure29.png" align="center" width="48%">
+</p>
+
+-------
+
+<p align="center">  
+<img src="./img/CountingSortProcedure30.png" align="center" width="48%">  
+<img src="./img/CountingSortProcedure31.png" align="center" width="48%">
+</p>
+
+-------
+
+<p align="center">  
+<img src="./img/CountingSortProcedure32.png" align="center" width="48%">  
+<img src="./img/CountingSortProcedure33.png" align="center" width="48%">
+</p>
+
+-------
+
+<p align="center">  
+<img src="./img/CountingSortProcedure34.png" align="center" width="48%">  
+<img src="./img/CountingSortProcedure35.png" align="center" width="48%">
+</p>
+
+-------
+
+<p align="center">  
+<img src="./img/CountingSortProcedure36.png" align="center" width="48%">
+<img src="./img/CountingSortProcedure37.png" align="center" width="48%">
+</p>
+
+-------
+
+
+<p align="center"> 
+<img src="./img/CountingSortResult.png" align="center" width="80%">
+</p>
+
+</div>
+</details>
+
+</br>
+
+### Counting Sort 구현
+<details>
+<summary>java 코드</summary>
+<div markdown="1">
+
+```java
+import java.util.Arrays;
+
+public class CountingSort {
+
+	public static void main(String[] args) {
+
+		int[] A = { 1, 2, 3, 6, 4, 3 }; // 입력 받은 배열
+
+		int n = A.length; // 배열 A의 길이
+		int k = 0; // 배열 A의 원소 중 최댓값
+
+		for (int i = 0; i < n; i++) {
+			if (k < A[i])
+				k = A[i];
+		}
+
+		int[] B = new int[k + 1]; // 배열 A의 각 원소 값이 등장하는 횟수를 저장할 배열
+
+		int[] C = new int[n]; // 정렬된 값을 담을 배열
+		
+		System.out.println("Before Counting Sort");
+		System.out.println(Arrays.toString(A));
+		
+		countingSort(A, B, C, n, k);
+		
+		System.out.println("After Counting Sort");
+		System.out.println(Arrays.toString(C));
+	}
+
+	private static void countingSort(int[] A, int[] B, int[] C, int n, int k) {
+
+		// 배열 A의 각 원소들이 등장하는 횟수 카운팅
+		for (int i = 0; i < n; i++) {
+			B[A[i]]++;
+		}
+
+		// 배열 B 누적합 계산
+		for (int i = 1; i <= k; i++) {
+			B[i] = B[i] + B[i - 1];
+		}
+
+		// C에 정렬된 결과 넣기
+		for (int i = n - 1; i >= 0; i--) {
+			// 현재 선택된 A의 원소
+			int a = A[i];
+
+			// B에서 뽑은 수
+			int b = B[a];
+
+			// C에 입력
+			C[b - 1] = a;
+
+			// B에서 뽑았으니 하나 감소시킴
+			B[a]--;
+
+		}
+
+	}
+
+}
+```
+
+</div>
+</details>
 
 </br>
 </br>
@@ -605,3 +939,9 @@ public class MergeSort {
 [[자료구조 알고리즘] 퀵정렬(Quicksort)에 대해 알아보고 자바로 구현하기](https://www.youtube.com/watch?v=7BDzle2n47c)
 
 [정렬의 뜻, 정렬 알고리즘 분류 방법](https://hellowoori.tistory.com/48)
+
+[[Algorithm] 정렬 : Counting sort(계수 정렬), Radix sort(기수 정렬)](https://velog.io/@wjdqls9362/Algorithm-%EC%A0%95%EB%A0%AC-Radix-sort-Counting-sort)
+
+[[정렬 알고리즘] 05 계수 및 기수 정렬(Counting Sort / Radix Sort) 이론 및 구현](https://rninche01.tistory.com/entry/%EC%A0%95%EB%A0%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-05-%EA%B3%84%EC%88%98-%EB%B0%8F-%EA%B8%B0%EC%88%98-%EC%A0%95%EB%A0%ACCounting-Sort-Radix-Sort)
+
+[[알고리즘 정리] 계수정렬(Counting Sort)](https://jeonyeohun.tistory.com/103)
