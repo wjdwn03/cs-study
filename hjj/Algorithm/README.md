@@ -9,14 +9,14 @@
 1. ### :file_folder: 알고리즘 기본
 
    - [:page_facing_up: **Sort**](./Sorting.md) <sub>정렬</sub>
-   - [:page_facing_up: **Binary Search**](./Stack&Queue.md) <sub>이분 탐색</sub>
-   - [:page_facing_up: **Hash Table**](./Graph&Tree&Heap.md) <sub>해시 테이블</sub>
-   - [:page_facing_up: **DFS & BFS**](./HashTable&Map&Set.md)
-   - [:page_facing_up: **LIS**](./HashTable&Map&Set.md)<sub>최장 증가 수열</sub>
-   - [:page_facing_up: **LCA**](./HashTable&Map&Set.md)<sub>최소 공통 조상</sub>
-   - [:page_facing_up: **Dynamic Programming**](./HashTable&Map&Set.md)<sub>동적 계획법</sub>
-   - [:page_facing_up: **Dijkstra**](./HashTable&Map&Set.md)<sub>다익스트라</sub>
-   - [:page_facing_up: **BitMask**](./HashTable&Map&Set.md)<sub>비트 마스크</sub>
+   - [:page_facing_up: **Binary Search**](./BinarySearch.md) <sub>이분 탐색</sub>
+   - [:page_facing_up: **Hash Table**](./HashTable.md) <sub>해시 테이블</sub>
+   - [:page_facing_up: **DFS & BFS**](./DfsBfs.md)
+   - [:page_facing_up: **LIS**](./LIS.md)<sub>최장 증가 수열</sub>
+   - [:page_facing_up: **LCA**](./LCA.md)<sub>최소 공통 조상</sub>
+   - [:page_facing_up: **Dynamic Programming**](./DynamicProgramming.md)<sub>동적 계획법</sub>
+   - [:page_facing_up: **Dijkstra**](./Dijkstra.md)<sub>다익스트라</sub>
+   - [:page_facing_up: **BitMask**](./BitMask.md)<sub>비트 마스크</sub>
 
 2. ### :file_folder: 알고리즘 면접 질문 모음
 
