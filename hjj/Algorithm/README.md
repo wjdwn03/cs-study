@@ -8,7 +8,7 @@
 
 1. ### :file_folder: 알고리즘 기본
 
-   - [:page_facing_up: **Sort**](./Array&LinkedList.md) <sub>정렬</sub>
+   - [:page_facing_up: **Sort**](./Sorting.md) <sub>정렬</sub>
    - [:page_facing_up: **Binary Search**](./Stack&Queue.md) <sub>이분 탐색</sub>
    - [:page_facing_up: **Hash Table**](./Graph&Tree&Heap.md) <sub>해시 테이블</sub>
    - [:page_facing_up: **DFS & BFS**](./HashTable&Map&Set.md)
