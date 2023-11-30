@@ -127,7 +127,7 @@ procedure DFS_iterative(G, v) is
 Procedure
 
 ```
-BFS(G, root) is
+procedure BFS(G, root) is
     let Q be a queue
     label root as explored
     Q.enqueue(root)

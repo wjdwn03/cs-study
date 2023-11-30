@@ -7,13 +7,13 @@
 1. ### [Sorting](#) <sub>정렬</sub>
 
    - 정의
-   - [**삽입 정렬**]() <sub>Insertion Sort</sub>
-   - [**거품 정렬**]() <sub>Bubble Sort</sub>
-   - [**선택 정렬**]() <sub>Selection Sort</sub>
-   - [**셸 정렬**]() <sub>Shell Sort</sub>
-   - [**퀵 정렬**]() <sub>Quick Sort</sub>
+   - [**삽입 정렬**](#삽입-정렬-insertion-sort) <sub>Insertion Sort</sub>
+   - [**거품 정렬**](#거품-정렬-bubble-sort) <sub>Bubble Sort</sub>
+   - [**선택 정렬**](#선택-정렬-selection-sort) <sub>Selection Sort</sub>
+   - [**셸 정렬**](#셸-정렬-shell-sort) <sub>Shell Sort</sub>
    - [**병합 정렬**]() <sub>Merge Sort</sub>
    - [**힙 정렬**]() <sub>Heap Sort</sub>
+   - [**퀵 정렬**]() <sub>Quick Sort</sub>
    - [**기수 정렬**]() <sub>Radix Sort</sub>
    - [**계수 정렬**]() <sub>Count Sort</sub>
 
@@ -42,6 +42,10 @@
 3. 이 과정은 모든 데이터가 더 이상 위치가 바뀌지 않을 때 까지 반복
 
 ### 알고리즘
+
+<details>
+<summary>java 코드</summary>
+<div markdown="1">
 
 ```java
 public class InsertionSort {
@@ -81,6 +85,9 @@ public class InsertionSort {
 };
 ```
 
+</div>
+</details>
+
 ## 선택 정렬 <sub>Selection Sort</sub>
 
 ### 특징
@@ -94,6 +101,10 @@ public class InsertionSort {
 3. 이 과정은 모든 데이터가 더 이상 위치가 바뀌지 않을 때 까지 반복
 
 ### 알고리즘
+
+<details>
+<summary>java 코드</summary>
+<div markdown="1">
 
 ```java
 public class SelectionSort {
@@ -134,6 +145,9 @@ public class SelectionSort {
 };
 ```
 
+</div>
+</details>
+
 ## 거품 정렬 <sub>Bubble Sort</sub>
 
 ### 특징
@@ -147,6 +161,10 @@ public class SelectionSort {
 3. 이 과정은 모든 데이터가 더 이상 위치가 바뀌지 않을 때 까지 반복
 
 ### 알고리즘
+
+<details>
+<summary>java 코드</summary>
+<div markdown="1">
 
 ```java
 public class BubbleSort {
@@ -192,6 +210,9 @@ public class BubbleSort {
 };
 ```
 
+</div>
+</details>
+
 ## 셸 정렬 <sub>Shell Sort</sub>
 
 ### 특징
@@ -208,6 +229,10 @@ public class BubbleSort {
 4. 이 과정은 간격이 1이 되거나 모든 데이터가 더 이상 위치가 바뀌지 않을 때 까지 반복
 
 ### 알고리즘
+
+<details>
+<summary>java 코드</summary>
+<div markdown="1">
 
 ```java
 public class ShellSort {
@@ -247,6 +272,9 @@ public class ShellSort {
 };
 ```
 
+</div>
+</details>
+
 ## 복잡도
 
 | 정렬 알고리즘 종류       | 최선<sub>Best</sub> | 평균<sub>Avg</sub> | 최악<sub>Worst</sub> | 공간<sub>Space</sub> |
@@ -255,8 +283,8 @@ public class ShellSort {
 | 거품<sub>Bubble</sub>    | `O(N)`              | `O(N^2)`           | `O(N^2)`             | `O(1)`               |
 | 선택<sub>Selection</sub> | `O(N^2)`            | `O(N^2)`           | `O(N^2)`             | `O(1)`               |
 | 셸<sub>Shell</sub>       | `O(NlogN)`          | `O((NlogN)^2)`     | `O((NlogN)^2)`       | `O(1)`               |
-| 퀵<sub>Quick</sub>       | `O(NlogN)`          | `O(NlogN)`         | `O(N^2)`             | `O(logN)`            |
 | 병합<sub>Merge</sub>     | `O(NlogN)`          | `O(NlogN)`         | `O(NlogN)`           | `O(N)`               |
 | 힙<sub>Heap</sub>        | `O(NlogN)`          | `O(NlogN)`         | `O(NlogN)`           | `O(1)`               |
+| 퀵<sub>Quick</sub>       | `O(NlogN)`          | `O(NlogN)`         | `O(N^2)`             | `O(logN)`            |
 | 기수<sub>Radix</sub>     | `O(NK)`             | `O(NK)`            | `O(NK)`              | `O(N+K)`             |
 | 계수<sub>Count</sub>     | `O(N+K)`            | `O(N+K)`           | `O(N+K)`             | `O(K)`               |
