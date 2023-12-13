@@ -257,3 +257,8 @@ UDP는 흐름제어, 오류제어 또는 손상된 세그먼트의 수신에 대
 
 [https://evan-moon.github.io/2019/10/08/what-is-http3/](https://evan-moon.github.io/2019/10/08/what-is-http3/)
 
+
+---
+## 3handshake and 4handshake
+https://velog.io/@averycode/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-TCPUDP%EC%99%80-3-Way-Handshake4-Way-Handshake 참조해서 쓸예정
+
