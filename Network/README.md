@@ -35,4 +35,14 @@
 
 4. ### :file_folder: Session 04 - HTTP 심화
 
-   - 공사중 :construction:
+   <!-- - [:page_facing_up: **Cross-Origin Resource Sharing**](./Note/CORS.md) <sub>CORS, 교차 출처 리소스 공유</sub> - :construction:
+     - [:question: Interview](./Interview/CORS.md) <sub>인터뷰</sub> -->
+
+   - [:page_facing_up: **HTTP API - GET & POST**](./Note/GET&POST.md) <sub>HTTP API - GET과 POST</sub> - :heavy_check_mark:
+     - [:question: Interview](./Interview/GET&POST.md) <sub>인터뷰</sub>
+   - [:page_facing_up: **Cookie & Session**](./Note/Cookie&Session.md) <sub>쿠키와 세션</sub> - :heavy_check_mark:
+     - [:question: Interview](./Interview/Cookie&Session.md) <sub>인터뷰</sub>
+   - [:page_facing_up: **RESTful API**](./Note/RestfulAPI.md) <sub> RESTful API</sub> - :heavy_check_mark:
+     - [:question: Interview](./Interview/RestfulAPI.md) <sub>인터뷰</sub>
+   - [:page_facing_up: **JSON Web Token**](./Note/JWT.md) <sub>JWT토큰</sub> - :heavy_check_mark:
+     - [:question: Interview](./Interview/JWT.md) <sub>인터뷰</sub>

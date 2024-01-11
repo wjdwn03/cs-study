@@ -11,7 +11,7 @@
 
 # :closed_book: Question <sub>면접 질문</sub>
 
-### 대칭키/공개키에 대해서 설명할 수 있나요?
+### HTTP/HTTPS에 대해서 설명할 수 있나요?
 
 [**정리한 내용 참고**](../Note/HTTP&HTTPS.md)
 
