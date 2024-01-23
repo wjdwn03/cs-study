@@ -4,7 +4,7 @@
 
 ## :bookmark_tabs: 목차
 
-[:arrow_up: **Network**](./README.md)
+[:arrow_up: **Network**](../README.md)
 
 1. ### TCP & UDP
    - [:page_facing_up: TCP/IP 4계층](#tcpip-4계층)
@@ -23,7 +23,7 @@
    - **`OIS`** - **개념적 모델**로 통신에는 실질적으로 사용되지 않음. 즉, 통신 모델 표준을 정할 때 주로 사용됨.
    - **`TCP/IP`** - **실질적**인 통신에 **주로 사용**됨.
 
-<p style="text-align:center"><img src="./img/TCPIP_4Layer_Basic.png" width="200"></p>
+<p style="text-align:center"><img src="../img/TCPIP_4Layer_Basic.png" width="200"></p>
 
 #### 1. 링크 계층
 
@@ -93,7 +93,7 @@
 **ACK** : ACKnowledgement의 약자, 응답 플래그</br>
 **ISN** : Initial Sequence Numbers의 약어, 새로운 TCP 연결의 첫 번째 패킷에 할당된 임의의 32비트 고유 시퀀스 번호
 
-<p style="text-align:center"><img src="./img/3_way_handshake.png"></p>
+<p style="text-align:center"><img src="../img/3_way_handshake.png"></p>
 
 1. SYN 단계 : 클라이언트는 서버에 클라이언트의 ISN을 담아 SYN을 보냄
 2. SYN + ACK 단계 : 서버는 클라이언트의 SYN을 수신, 서버의 ISN을 보내며 승인 번호로 클라이언트의 ISN+1를 보냄
@@ -103,7 +103,7 @@
 
 #### 4-way handshake
 
-<p style="text-align:center"><img src="./img/4_way_handshake.png"></p>
+<p style="text-align:center"><img src="../img/4_way_handshake.png"></p>
 
 1. 클라이언트가 연결을 닫으려고 할 때 FIN으로 설정된 세그먼트를 보내고 클라이언트는 FIN_WAIT_1 상태로 들어가고 서버의 응답을 기다림.
 2. 서버는 ACK라는 승인 세그먼트를 보냄. 그리고 COLSE_WAIT 상태에 들어가고, 클라이언트는 세그먼트를 받으면 FIN_WAIT_2상태에 들어감.

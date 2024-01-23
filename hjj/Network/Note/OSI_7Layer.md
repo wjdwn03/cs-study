@@ -4,7 +4,7 @@
 
 ## :bookmark_tabs: 목차
 
-[:arrow_up: **Network**](./README.md)
+[:arrow_up: **Network**](../README.md)
 
 1. ### OSI 7계층
    - [:page_facing_up: 1. 물리계층](#1-물리계층)
@@ -21,11 +21,11 @@
 
 - 네트워크 통신을 7개의 추상적 계층으로 나누며 각 계층은 특정 작업을 처리하고 그 위와 아래의 계층과 통신함.
 
-<p style="text-align:center"><img src="./img/OSI_7Layer_Basic.png" width="200"></p>
+<p style="text-align:center"><img src="../img/OSI_7Layer_Basic.png" width="200"></p>
 
 ### 1. 물리계층
 
-<img src="./img/OSI_7Layer_Physical.png">
+<img src="../img/OSI_7Layer_Physical.png">
 
 - **물리적 매체**를 통한 비트 전송에 요구되는 기능을 담당
 - 데이터 전송과 관련된 물리적 장비가 포함
@@ -37,7 +37,7 @@
 
 ### 2. 데이터 링크 계층
 
-<p style="text-align:center"><img src="./img/OSI_7Layer_DataLink.png"></p>
+<p style="text-align:center"><img src="../img/OSI_7Layer_DataLink.png"></p>
 
 - **노드 대 노드(node-to-node)** 전달의 책임을 가지는 계층
 - 네트워크 계층과 매우 비슷하지만, 데이터 연결 계층은 <u>동일한 네트워크</u>에 있는 두 개의 장치 간 데이터 전송을 용이하게 함.
@@ -52,7 +52,7 @@
 
 ### 3. 네트워크 계층
 
-<p style="text-align:center"><img src="./img/OSI_7Layer_Network.png"></p>
+<p style="text-align:center"><img src="../img/OSI_7Layer_Network.png"></p>
 
 - **발신지 대 목적지** 전달에 대한 책임을 가지는 계층
 - <u>서로 다른 두 네트워크</u> 간 데이터 전송을 용이하게 하는 역할
@@ -67,7 +67,7 @@
 
 ### 4. 전송 계층
 
-<p style="text-align:center"><img src="./img/OSI_7Layer_Transport.png"></p>
+<p style="text-align:center"><img src="../img/OSI_7Layer_Transport.png"></p>
 
 - 개별적인 패킷의 **종단 대 종단(End-to-End)** 전송을 담당하는 계층
 - 포트 주소를 지정하며, 세그먼트로의 캡슐화를 수행
@@ -82,7 +82,7 @@
 ### 5. 세션 계층
 > 세션 : 통신이 시작될 때부터 종료될 때까지의 시간
 
-<p style="text-align:center"><img src="./img/OSI_7Layer_Session.png"></p>
+<p style="text-align:center"><img src="../img/OSI_7Layer_Session.png"></p>
 
 - 두 기기 사이의 통신을 시작하고 종료하는 일을 담당하는 계층
 - 교환되고 있는 모든 데이터를 전송할 수 있도록 충분히 오랫동안 세션을 개방한 다음 리소스를 낭비하지 않기 위해 세션을 즉시 닫을 수 있도록 보장
@@ -99,7 +99,7 @@
 
 ### 6. 프레젠테이션 계층(표현 계층)
 
-<p style="text-align:center"><img src="./img/OSI_7Layer_Presentation.png"></p>
+<p style="text-align:center"><img src="../img/OSI_7Layer_Presentation.png"></p>
 
 - 주로 데이터를 준비하는 역할을 하여 애플리케이션 계층이 이를 사용할 수 있게 함.
 - 통신 장치 간의 상호 운용성을 보장
@@ -118,7 +118,7 @@
 
 ### 7. 애플리케이션 계층(응용 계층)
 
-<p style="text-align:center"><img src="./img/OSI_7Layer_Application.png"></p>
+<p style="text-align:center"><img src="../img/OSI_7Layer_Application.png"></p>
 
 - **가장 유저와 가까운 층**으로서, 사용자가 네트워크에 접근할 수 있도록 서비스를 제공하는 계층
 - 사용자의 데이터와 직접 상호 작용하는 유일한 계층
@@ -131,7 +131,7 @@
 
 #### A가 B에게 이메일을 보내는 상황
 
-<img src="./img/OSI_Model_DataTransport_Procedure_.png">
+<img src="../img/OSI_Model_DataTransport_Procedure_.png">
 
 1. A는 자신의 노트북에 있는 이메일 애플리케이션에서 메시지를 작성하고 '발송'을 누르면 A의 이메일 애플리케이션이 이메일 메시지를 애플리케이션 계층으로 넘김.
 

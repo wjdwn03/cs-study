@@ -4,7 +4,7 @@
 
 ## :bookmark_tabs: 목차
 
-[:arrow_up: **Network**](./README.md)
+[:arrow_up: **Network**](../README.md)
 
 1. ### Network Socket
    - [:page_facing_up: 소켓이란](#소켓이란)
