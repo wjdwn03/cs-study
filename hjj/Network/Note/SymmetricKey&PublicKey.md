@@ -172,6 +172,9 @@
 - 참고
 
     [암호화의 종류와 Bcrypt](https://velog.io/@yenicall/%EC%95%94%ED%98%B8%ED%99%94%EC%9D%98-%EC%A2%85%EB%A5%98%EC%99%80-Bcrypt)
+
     [대칭키 암호화](https://lesstif.gitbook.io/web-service-hardening/encryption)
+    
     [암호 이야기 2편 – 암호 알고리즘에 대하여](https://www.lgcns.com/blog/cns-tech/security/16037/)
+    
     [Network - 대칭키, 공개키(비대칭키)란 무엇인가?!(+ SSL, HTTPS)](https://jaehoney.tistory.com/290)
