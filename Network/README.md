@@ -31,7 +31,16 @@
 
 3. ### :file_folder: Session 03 - 네트워크 최적화
 
-   - 공사중 :construction:
+   - [:page_facing_up: **DNS**](./Note/DNS.md) <sub>Domain Name System</sub> - :construction:
+     - [:question: Interview](./Interview/DNS.md) <sub>인터뷰</sub>
+   - [:page_facing_up: **DNS round-robin**](./Note/DNSRoundRobin.md) - :construction:
+     - [:question: Interview](./Interview/DNSRoundRobin.md) <sub>인터뷰</sub>
+   - [:page_facing_up: **Load Balancing**](./Note/LoadBalancing.md) <sub>로드 밸런싱</sub> - :construction:
+     - [:question: Interview](./Interview/LoadBalancing.md) <sub>인터뷰</sub>
+   - [:page_facing_up: **Blocking, Non-blocking & Synchronous, Asynchronous**](./Note/BlockingNonBlocking&SynchronousAsynchronous.md) - :construction:
+     - [:question: Interview](./Interview/BlockingNonBlocking&SynchronousAsynchronous.md) <sub>인터뷰</sub>
+   - [:page_facing_up: **Blocking & Non-Blocking I/O**](./Note/Blocking&NonBlocking.md) - :construction:
+     - [:question: Interview](./Interview/Blocking&NonBlocking.md) <sub>인터뷰</sub>
 
 4. ### :file_folder: Session 04 - HTTP 심화
 
