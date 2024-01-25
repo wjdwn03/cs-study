@@ -10,7 +10,7 @@
    - SSL Handshake의 과정을 설명해 보세요.
    - HTTPS와 SSL은 같은 것일까? SSL하고 TLS는 어떤 점에서 다른가?
    - SSL 암호화 통신의 단계를 설명해주세요.
-   - SSL handshake 단계에 대해 설명해주세요.
+   - SSL handshake 단계에 대해 자세히 설명해주세요.
 
 # :closed_book: Question <sub>면접 질문</sub>
 
@@ -42,7 +42,7 @@ TLS가 SSL의 후속 버전이지만, SSL이 일반적으로 더 많이 사용�
 1. 협상 완료되면, SSL 세션 생성 => 클라이언트와 서버는 원하는 데이터를 주고받음.
 1. 최종적으로 데이터 전송의 끝을 알리며 세션이 종료된다.
 
-###  SSL handshake 단계에 대해 설명해주세요.
+###  SSL handshake 단계에 대해 자세히 설명해주세요.
 
 1. Client hello
 
