@@ -6,12 +6,11 @@
 
 1. ### Load Balancing
 
-   - [:page_facing_up: DNS](#dns-domain-name-system-1)
-   - [:page_facing_up: DNS 레코드 유형](#dns-레코드-유형)
-   - [:page_facing_up: DNS 기초적인 동작 흐름](#dns의-기초적인-동작-흐름)
-   - [:page_facing_up: DNS 서버 분리](#dns-서버-분리)
-   - [:page_facing_up: DNS 자세한 동작 과정](#dns-자세한-동작-과정)
-   - [:page_facing_up: DNS 쿼리 유형](#dns-쿼리-유형)
+   - [:page_facing_up: Load Balancer](#load-balancer-로드-밸런서)
+   - [:page_facing_up: 서버 확장 방법](#증가한-트래픽에-대처할-수-있는-두-가지-방법)
+   - [:page_facing_up: Load Balancing](#load-balancing-로드-밸런싱)
+   - [:page_facing_up: 로드 밸런싱 알고리즘](#로드-밸런싱-알고리즘)
+   - [:page_facing_up: 로드 밸런싱 2가지 작동 방식](#로드-밸런싱-2가지-작동-방식)
 
 
 ### Load Balancer <sub>로드 밸런서</sub>
