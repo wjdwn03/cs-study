@@ -5,9 +5,9 @@
 [:arrow_up: **Network**](../README.md)
 
 1. ### Blocking, Non-blocking & Synchronous, Asynchronous
-   - [:page_facing_up: GET](#get-요청)
-   - [:page_facing_up: POST](#post-요청)
-   - [:page_facing_up: GET과 POST 비교](#get과-post-비교)
+   - [:page_facing_up: Synchronous & Asynchronous ](#synchronous--asynchronous-동기--비동기)
+   - [:page_facing_up: Blocking & Nonblocking](#blocking--nonblocking)
+   - [:page_facing_up: IO 작업](#io-작업)
 
 
 > **Blocking** : 자신의 작업을 진행하다가 다른 주체의 작업이 시작되면 다른 작업이 끝날 때까지 기다렸다가 자신의 작업을 시작하는 것
