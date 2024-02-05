@@ -136,3 +136,5 @@
     [[네트워크] HTTP GET 요청과 POST 요청](https://pabeba.tistory.com/150#recentEntries)
 
     [HTTP의 GET과 POST 메서드 비교. [ 네트워크 면접 질문1 ]](https://murphymoon.tistory.com/entry/HTTP%EC%9D%98-GET%EA%B3%BC-POST-%EB%A9%94%EC%84%9C%EB%93%9C-%EB%B9%84%EA%B5%90-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EB%A9%B4%EC%A0%91-%EC%A7%88%EB%AC%B81)
+
+    [[10분 테코톡] 🐰 멍토의 Blocking vs Non-Blocking, Sync vs Async](https://www.youtube.com/watch?v=oEIoqGd-Sns)
