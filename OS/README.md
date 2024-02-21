@@ -34,7 +34,7 @@
 
 3. ### :file_folder: Session 03 - 프로세스
 
-   - [:page_facing_up: **프로세스**](./Note/) <sub></sub> - :construction:
+   - [:page_facing_up: **프로세스**](./Note/Process.md) <sub></sub> - :construction:
      - [:question: Interview](./Interview/) <sub>인터뷰</sub>
    - [:page_facing_up: **프로세스 스케줄링**](./Note/) - :construction:
      - [:question: Interview](./Interview/) <sub>인터뷰</sub>

@@ -6,9 +6,8 @@
 
 1. ### Process
    - [:page_facing_up: Process](#cors-cross-origin-resource-sharing-1)
-   - [:page_facing_up: 왜 CORS가 필요할까?](#왜-cors가-필요할까)
-   - [:page_facing_up: CORS 3가지 동작 방식](#cors-3가지-작동-방식)
-   - [:page_facing_up: CORS 해결 방법](#cors-해결-방법)
+   - [:page_facing_up: PCB](#pcb-process-control-block-프로세스-제어-블록)
+   - [:page_facing_up: context switching](#context-switching-문맥-교환)
 
 
 ## Process <sub>프로세스</sub>
